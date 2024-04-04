@@ -1,8 +1,9 @@
 const a = alert('hello');
 
-function name() {
+function haloDunia() {
   const a = 'hello';
   return a;
 }
 
+haloDunia();
 console.log(a);
