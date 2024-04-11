@@ -1,0 +1,17 @@
+// //heading element
+
+// $font-sizes: (15, 12, 9.5, 7.8, 6.25, 5);
+// $multiplier: 4;
+
+// @for $i from 1 through 6 {
+//   h#{$i} {
+//     font-size: calc(#{$fs-1} * nth($font-sizes, $i));
+//     margin-block: calc(#{$m-1} * $multiplier);
+//   }
+// }
+
+// // paragraph
+// p {
+//   font-size: calc($fs-1 * 4);
+//   line-height: calc(($fs-1 * 4) * (1.5));
+// }
