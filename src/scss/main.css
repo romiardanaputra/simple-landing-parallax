@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-rows-1 {
+  grid-template-rows: repeat(1, min-max(0, 1fr));
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, min-max(0, 1fr));
+} /*# sourceMappingURL=main.css.map */
