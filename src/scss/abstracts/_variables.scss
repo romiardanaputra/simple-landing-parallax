@@ -1,0 +1,35 @@
+// color template
+$theme-colors: (
+  'background': #121720,
+  'primary': #807b23,
+  'accent': '#fff',
+  'text-light': '#121720',
+  'text-dark': '#fff',
+);
+
+// breakpoint template
+$breakpoints: (
+  'xs': '320px',
+  'base': '480px',
+  'sm': '600px',
+  'md': '768px',
+  'lg': '900px',
+  'xl': '1024px',
+  '2xl': '1280px',
+  'desktop': '1400px',
+);
+
+// spacing
+$m-1: '4px';
+$p-1: '4px';
+
+// sizing
+$h-full: '100%';
+$w-full: '100%';
+$h-1: '4px';
+$w-1: '4px';
+
+// typography
+$lh-1: '4px';
+$fs-1: '4px';
+$ls-1: '4px';
