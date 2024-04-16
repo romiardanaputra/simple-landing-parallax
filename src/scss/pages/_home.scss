@@ -1,0 +1,64 @@
+.flex-center {
+  @include flex-center;
+}
+.bg-home {
+  background-image: radial-gradient(
+      ellipse at bottom,
+      rgba(27, 39, 53, 0.9) 0%,
+      rgba(9, 10, 15, 0.9) 100%
+    ),
+    url('../../../src/assets/images/bg-landing.png');
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300vh;
+}
+
+.text-white {
+  color: map-get($map: $theme-colors, $key: 'text-light');
+}
+
+.container {
+  display: inline-block;
+}
+
+.text-typewriter {
+  font-size: 124px;
+  letter-spacing: 14px;
+  border-right: 5px solid;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  animation:
+    typing 3.5s steps(30),
+    blink 0.5s step-end infinite alternate;
+  -webkit-animation:
+    typing 3.5s steps(30),
+    blink 0.5s step-end infinite alternate;
+}
+
+.trailer {
+  @include size(30px, 30px);
+  border-radius: 50%;
+  @include position(fixed);
+  z-index: 10000;
+  background: #fff;
+  mix-blend-mode: difference;
+  pointer-events: none;
+}
+
+.tools-develop {
+  min-height: 100vh;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
