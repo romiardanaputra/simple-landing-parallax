@@ -1,0 +1,50 @@
+@use 'reset' as *;
+@use 'typography' as *;
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: map-get($map: $theme-colors, $key: 'background');
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100dvh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-block: 4px;
+}
+
+h1 {
+  font-size: 64px;
+}
+
+h2 {
+  font-size: 48.83px;
+}
+h3 {
+  font-size: 39.06px;
+}
+h4 {
+  font-size: 31.25px;
+}
+h5 {
+  font-size: 25px;
+}
+h6 {
+  font-size: 20px;
+}
+
+p {
+  font-size: 16px;
+}
+
+.text-xs {
+  font-size: 12.8px;
+}
+.fredy-baru {
+  color: #fff;
+}

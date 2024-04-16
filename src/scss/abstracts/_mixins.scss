@@ -1,3 +1,35 @@
-@mixin flex {
+@mixin display($display) {
+  display: $display;
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin position($position, $top: 0px, $right: 0px, $bottom: 0px, $left: 0px) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin flex-center($direction: row, $justify: center, $align: center) {
   display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin justify-center($direction: row, $justify: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+}
+
+@mixin align-center($direction: row, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
 }
