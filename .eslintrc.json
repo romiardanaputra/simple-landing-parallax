@@ -10,7 +10,7 @@
   },
   "rules": {
     "indent": ["error", 2],
-    "linebreak-style": ["warn", "unix"],
+    "linebreak-style": ["warn", "windows"],
     "quotes": ["error", "single"],
     "semi": ["error", "always"]
   }
