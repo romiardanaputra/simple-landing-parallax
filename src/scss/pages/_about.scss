@@ -1,6 +1,6 @@
 @use 'sass:math';
 
-body{
+body {
   overflow: hidden;
 }
 .about_main {
@@ -91,8 +91,7 @@ $shadows-big: mult-box-shadow(100);
   }
 }
 
-
-.persons{
+.persons {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,9 +106,8 @@ $shadows-big: mult-box-shadow(100);
   -ms-transform: translate();
   -o-transform: translate();
 
-  & img{
+  & img {
     @include size(250px, 500px);
     transform: translateY(40em);
+  }
 }
-}
-
