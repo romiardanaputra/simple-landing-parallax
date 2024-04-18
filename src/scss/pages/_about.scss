@@ -1,0 +1,115 @@
+@use 'sass:math';
+
+body{
+  overflow: hidden;
+}
+.about_main {
+  height: 100dvh;
+  overflow: hidden;
+}
+@function mult_box_shadow($n) {
+  $limit: 2000px;
+  $value: #{random(math.div($limit, 1px))}px #{random(math.div($limit, 1px))}px
+    #fff;
+  @for $i from 2 through $n {
+    $value: '#{$value}, #{random(math.div($limit, 1px))}px #{random(math.div($limit, 1px))}px #FFF';
+  }
+  @return unquote($value);
+}
+
+$shadows-small: mult-box-shadow(700);
+$shadows-medium: mult-box-shadow(200);
+$shadows-big: mult-box-shadow(100);
+
+.stars {
+  @include size(1px, 1px);
+  background: transparent;
+  box-shadow: $shadows-small;
+  animation: animateStar 50s linear infinite;
+  -webkit-animation: animateStar 50s linear infinite;
+
+  &:after {
+    content: ' ';
+    @include position(absolute, 2000px);
+    @include size(1px, 1px);
+    background: transparent;
+    box-shadow: $shadows-small;
+  }
+}
+
+.stars2 {
+  @include size(2px, 2px);
+  background: transparent;
+  box-shadow: $shadows-medium;
+  animation: animateStar 100s linear infinite;
+  -webkit-animation: animateStar 100s linear infinite;
+
+  &:after {
+    content: ' ';
+    @include position(absolute, 2000px);
+    @include size(2px, 2px);
+    background: transparent;
+    box-shadow: $shadows-medium;
+  }
+}
+
+.stars3 {
+  @include size(3px, 3px);
+  background: transparent;
+  box-shadow: $shadows-big;
+  animation: animateStar 150s linear infinite;
+  -webkit-animation: animateStar 150s linear infinite;
+  &:after {
+    content: ' ';
+    @include position(absolute, 2000px);
+    @include size(3px, 3px);
+    background: transparent;
+    box-shadow: $shadows-big;
+  }
+}
+
+.title {
+  min-height: 100dvh;
+  color: #fff;
+  text-align: center;
+  font-weight: 300;
+  font-size: 50px;
+  letter-spacing: 10px;
+  margin-top: -60px;
+  padding-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes animateStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
+
+
+.persons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5em;
+  width: 100%;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate();
+  -moz-transform: translate();
+  -ms-transform: translate();
+  -o-transform: translate();
+
+  & img{
+    @include size(250px, 500px);
+    transform: translateY(40em);
+}
+}
+
