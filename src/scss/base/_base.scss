@@ -1,12 +1,10 @@
-@use 'reset' as *;
-@use 'typography' as *;
+@use '../abstracts/variables' as *;
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: Helvetica, sans-serif;
   background-color: map-get($map: $theme-colors, $key: 'background');
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
-  min-height: 100dvh;
 }
 
 h1,
@@ -44,7 +42,4 @@ p {
 
 .text-xs {
   font-size: 12.8px;
-}
-.fredy-baru {
-  color: #fff;
 }

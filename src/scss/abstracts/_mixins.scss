@@ -1,7 +1,3 @@
-@mixin display($display) {
-  display: $display;
-}
-
 @mixin size($width, $height) {
   width: $width;
   height: $height;
@@ -22,14 +18,9 @@
   align-items: $align;
 }
 
-@mixin justify-center($direction: row, $justify: center) {
-  display: flex;
-  flex-direction: $direction;
-  justify-content: $justify;
-}
-
-@mixin align-center($direction: row, $align: center) {
-  display: flex;
-  flex-direction: $direction;
-  align-items: $align;
+@mixin background($bg-position, $bg-repeat, $bg-size, $height) {
+  background-position: $bg-position;
+  background-repeat: $bg-repeat;
+  background-size: $bg-size;
+  min-height: $height;
 }
