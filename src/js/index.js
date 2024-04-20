@@ -17,7 +17,7 @@ let hasScrolled = false;
 document.addEventListener('scroll', function () {
   const titleWrapper = document.querySelector('.title-wrapper');
   const persons = document.querySelectorAll('.persons img');
-  
+
   function animateElements() {
     const contentAbout = `
         <div class="circle"></div>
