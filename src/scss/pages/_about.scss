@@ -1,32 +1,18 @@
 @use 'sass:math';
+@use '../abstracts' as *;
 
-body {
-  overflow: hidden;
-}
-.about_main {
+.about {
   height: 100dvh;
   overflow: hidden;
+  position: relative;
+  background: radial-gradient(ellipse at bottom, rgba(9, 10, 15) 100%);
 }
-@function mult_box_shadow($n) {
-  $limit: 2000px;
-  $value: #{random(math.div($limit, 1px))}px #{random(math.div($limit, 1px))}px
-    #fff;
-  @for $i from 2 through $n {
-    $value: '#{$value}, #{random(math.div($limit, 1px))}px #{random(math.div($limit, 1px))}px #FFF';
-  }
-  @return unquote($value);
-}
-
-$shadows-small: mult-box-shadow(700);
-$shadows-medium: mult-box-shadow(200);
-$shadows-big: mult-box-shadow(100);
 
 .stars {
   @include size(1px, 1px);
   background: transparent;
   box-shadow: $shadows-small;
   animation: animateStar 50s linear infinite;
-  -webkit-animation: animateStar 50s linear infinite;
 
   &:after {
     content: ' ';
@@ -42,7 +28,6 @@ $shadows-big: mult-box-shadow(100);
   background: transparent;
   box-shadow: $shadows-medium;
   animation: animateStar 100s linear infinite;
-  -webkit-animation: animateStar 100s linear infinite;
 
   &:after {
     content: ' ';
@@ -58,7 +43,6 @@ $shadows-big: mult-box-shadow(100);
   background: transparent;
   box-shadow: $shadows-big;
   animation: animateStar 150s linear infinite;
-  -webkit-animation: animateStar 150s linear infinite;
   &:after {
     content: ' ';
     @include position(absolute, 2000px);
@@ -70,6 +54,7 @@ $shadows-big: mult-box-shadow(100);
 
 .title {
   min-height: 100dvh;
+  position: relative;
   color: #fff;
   text-align: center;
   font-weight: 300;
@@ -77,37 +62,185 @@ $shadows-big: mult-box-shadow(100);
   letter-spacing: 10px;
   margin-top: -60px;
   padding-left: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center(row, center, center);
 }
 
-@keyframes animateStar {
-  from {
-    transform: translateY(0px);
+.title-wrapper {
+  @include position(absolute, 50%, 0, 0, 50%);
+  @include size(800px, 400px);
+  transform: translate(-50%, -50%);
+  border-radius: 2px;
+  overflow: hidden;
+  background: transparent;
+  color: #fff;
+  font-family: Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.circle {
+  z-index: 10;
+  @include size(50px, 50px);
+  @include position(absolute, 50%, 0, 0, 50%);
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 50%;
+  animation: circle 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.line {
+  position: absolute;
+  z-index: 10;
+  width: 38%;
+  height: 4px;
+  top: 198px;
+  background: #fff;
+  transform: scaleX(0);
+
+  &.left {
+    left: 100px;
+    transform-origin: 100% 50%;
+    animation:
+      lines 1s ease-in-out 0.8s,
+      line-left 1s steps(1) 0.8s;
   }
-  to {
-    transform: translateY(-2000px);
+
+  &.right {
+    right: 100px;
+    transform-origin: 0% 50%;
+    animation:
+      lines 1s ease-in-out 0.8s,
+      line-right 1s steps(1) 0.8s;
+  }
+}
+
+.bracket {
+  position: absolute;
+  z-index: 10;
+  height: 150px;
+  width: 4px;
+  top: 135px;
+  background: #fff;
+  animation: bracket 0.4s ease-out 1.7s;
+  animation-fill-mode: both;
+
+  &:before,
+  &:after {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 25px;
+    height: 4px;
+    background: #fff;
+  }
+
+  &.left {
+    left: 50px;
+
+    &:before {
+      top: 0;
+      left: 0;
+      transform-origin: 0% 50%;
+      animation: bracket-line 0.2s ease-out 2.1s;
+      animation-fill-mode: both;
+    }
+
+    &:after {
+      bottom: 0;
+      left: 0;
+      transform-origin: 0% 50%;
+      animation: bracket-line 0.2s ease-out 2.1s;
+      animation-fill-mode: both;
+    }
+  }
+
+  &.right {
+    right: 50px;
+
+    &:before {
+      top: 0;
+      right: 0;
+      transform-origin: 100% 50%;
+      animation: bracket-line 0.2s ease-out 2.1s;
+      animation-fill-mode: both;
+    }
+
+    &:after {
+      bottom: 0;
+      right: 0;
+      transform-origin: 100% 50%;
+      animation: bracket-line 0.2s ease-out 2.1s;
+      animation-fill-mode: both;
+    }
+  }
+}
+
+.big {
+  position: absolute;
+  z-index: 5;
+  top: 173px;
+  width: 100%;
+  text-align: center;
+  font-weight: 800;
+  font-size: 50px;
+  color: #ffffff;
+  line-height: 50px;
+  text-transform: uppercase;
+}
+
+.hide {
+  position: absolute;
+  z-index: 7;
+  width: 100%;
+  height: 50px;
+  left: 0;
+  background-color: #121720;
+  animation: reveal 0.4s ease-out 1.7s;
+  animation-fill-mode: both;
+
+  &.top {
+    bottom: 49%;
+    transform-origin: 50% 0%;
+  }
+
+  &.bottom {
+    top: 49%;
+    transform-origin: 50% 100%;
+  }
+}
+
+.small {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  text-align: center;
+  left: 0;
+  font-weight: 300;
+  font-size: 30px;
+  color: #ffffff;
+  line-height: 30px;
+  text-transform: uppercase;
+
+  &.top {
+    top: 130px;
+    animation: small-top 0.5s ease-out 2.2s;
+    animation-fill-mode: both;
+  }
+
+  &.bottom {
+    bottom: 130px;
+    animation: small-bottom 0.5s ease-out 2.2s;
+    animation-fill-mode: both;
   }
 }
 
 .persons {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5em;
-  width: 100%;
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate();
-  -moz-transform: translate();
-  -ms-transform: translate();
-  -o-transform: translate();
-
+  justify-content: space-between;
+  @include position(absolute, 50%, 0, 0, 50%);
+  transform: translate(-50%, 120%);
   & img {
-    @include size(250px, 500px);
-    transform: translateY(40em);
+    @include size(200px, 400px);
   }
 }

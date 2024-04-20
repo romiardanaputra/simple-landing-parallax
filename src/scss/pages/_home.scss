@@ -1,17 +1,24 @@
+@use '../abstracts' as *;
+
 .flex-center {
   @include flex-center;
 }
-.bg-home {
+
+.wrapper {
+  min-height: 100dvh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.landing {
   background-image: radial-gradient(
       ellipse at bottom,
       rgba(27, 39, 53, 0.9) 0%,
       rgba(9, 10, 15, 0.9) 100%
     ),
     url('../../../src/assets/images/bg-landing.png');
-  background-position: bottom center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100dvh;
+  @include background(bottom center, no-repeat, cover, 100dvh);
+  position: relative;
+  z-index: -1;
 }
 
 .text-white {
@@ -23,17 +30,15 @@
 }
 
 .text-typewriter {
-  font-size: 124px;
-  letter-spacing: 14px;
+  font-size: 100px;
+  font-weight: 900;
+  letter-spacing: 10px;
   border-right: 5px solid;
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
   animation:
-    typing 3.5s steps(30),
-    blink 0.5s step-end infinite alternate;
-  -webkit-animation:
-    typing 3.5s steps(30),
+    typing 1s steps(30),
     blink 0.5s step-end infinite alternate;
 }
 
@@ -49,16 +54,4 @@
 
 .tools-develop {
   min-height: 100vh;
-}
-
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
 }

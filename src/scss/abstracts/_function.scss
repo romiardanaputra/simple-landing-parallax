@@ -1,12 +1,11 @@
-// @function calculate-rem($size) {
-//   $base-size: 16px;
-//   @return ($size , $base-size) * 1rem;
-// }
+@use 'sass:math';
 
-// @function shade-color($color, $percent) {
-//   @return mix(black, $color, $percent);
-// }
-
-// @function tint-color($color, $percent) {
-//   @return mix(white, $color, $percent);
-// }
+@function mult_box_shadow($n) {
+  $limit: 2000px;
+  $value: #{random(math.div($limit, 1px))}px #{random(math.div($limit, 1px))}px
+    #fff;
+  @for $i from 2 through $n {
+    $value: '#{$value}, #{random(math.div($limit, 1px))}px #{random(math.div($limit, 1px))}px #FFF';
+  }
+  @return unquote($value);
+}
