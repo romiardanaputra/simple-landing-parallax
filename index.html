@@ -1,51 +1,98 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Progress | Journey</title>
-    <link rel="stylesheet" href="src/scss/styles.css" />
-  </head>
 
-  <body>
-    <main class="wrapper">
-      <section
-        class="landing flex flex-center parallax"
-        data-parallax-speed="0.5"
-      >
-        <div class="container">
-          <h1 class="text-white text-typewriter interactable">DISCOVER</h1>
-          <div class="trailer" id="trailer"></div>
-        </div>
-      </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Progress | Journey</title>
+  <link rel="stylesheet" href="src/scss/styles.css" />
+</head>
 
-      <!-- about us -->
-      <section class="about">
-        <div class="stars"></div>
-        <div class="stars2"></div>
-        <div class="stars3"></div>
-        <div class="title">
-          <div class="title-wrapper"></div>
-        </div>
-        <div class="persons">
-          <img
-            src="../../src/assets/images/avatar/romiavatar.png"
-            alt="romiavatar"
-          />
-          <img
-            src="../../src/assets/images/avatar/fredyavatar.png"
-            alt="fredyavatar.png"
-          />
-          <img
-            src="../../src/assets/images/avatar/aditavatar.png
-      "
-            alt="aditavatar.png
-      "
-          />
-        </div>
-      </section>
-    </main>
-    <script src="src/js/index.js"></script>
-    <script type="module" src="src/js/traillerMouse.js"></script>
-  </body>
+<body>
+  <main class="wrapper">
+    <!-- home section start -->
+    <section class="landing flex flex-center parallax" data-parallax-speed="0.5">
+      <div class="container">
+        <h1 class="text-white text-typewriter interactable">DISCOVER</h1>
+        <div class="trailer" id="trailer"></div>
+      </div>
+    </section>
+    <!-- home section end  -->
+
+    <!-- about us start -->
+    <section class="about">
+      <div class="stars"></div>
+      <div class="stars2"></div>
+      <div class="stars3"></div>
+      <div class="title">
+        <div class="title-wrapper"></div>
+      </div>
+      <div class="persons">
+        <img src="../../src/assets/images/avatar/romiavatar.png" alt="romiavatar" />
+        <img src="../../src/assets/images/avatar/fredyavatar.png" alt="fredyavatar.png" />
+        <img src="../../src/assets/images/avatar/aditavatar.png
+      " alt="aditavatar.png
+      " />
+      </div>
+    </section>
+    <!-- about us end -->
+
+    <!-- tools used start -->
+    <section class="tools-used">
+      <div class="tools-used-wrapper">
+        <!-- figma icon start -->
+        <picture class="icon-wrapper">
+          <source type="image/webp" srcset="../../src/assets/icons/figma.webp">
+          <img src="../../src/assets/icons/figma.png" alt="Figma"
+            onerror="this.onerror=null; this.src='../../src/assets/icons/figma.webp'">
+        </picture>
+        <!-- figma icon end -->
+
+        <!-- github icon start -->
+        <picture class="icon-wrapper">
+          <source type="image/webp" srcset="../../src/assets/icons/github.webp">
+          <img src="../../src/assets/icons/github.png" alt="Github"
+            onerror="this.onerror=null; this.src='../../src/assets/icons/github.webp'">
+        </picture>
+        <!-- github icon end -->
+
+        <!-- html icon start -->
+        <picture class="icon-wrapper">
+          <source type="image/webp" srcset="../../src/assets/icons/html.webp">
+          <img src="../../src/assets/icons/html.png" alt="Html"
+            onerror="this.onerror=null; this.src='../../src/assets/icons/html.webp'">
+        </picture>
+        <!-- html icon end -->
+
+        <!-- js icon start -->
+        <picture class="icon-wrapper">
+          <source type="image/webp" srcset="../../src/assets/icons/js.webp">
+          <img src="../../src/assets/icons/js.png" alt="Js"
+            onerror="this.onerror=null; this.src='../../src/assets/icons/js.webp'">
+        </picture>
+        <!-- js icon end -->
+
+        <!-- sass icon start  -->
+        <picture class="icon-wrapper">
+          <source type="image/webp" srcset="../../src/assets/icons/sass.webp">
+          <img src="../../src/assets/icons/sass.png" alt="Sass"
+            onerror="this.onerror=null; this.src='../../src/assets/icons/sass.webp'">
+        </picture>
+        <!-- sass icon end -->
+
+        <!-- vs code icon start -->
+        <picture class="icon-wrapper">
+          <source type="image/webp" srcset="../../src/assets/icons/vscode.webp">
+          <img src="../../src/assets/icons/vscode.png" alt="Vscode"
+            onerror="this.onerror=null; this.src='../../src/assets/icons/vscode.webp'">
+        </picture>
+        <!-- vs code icon end -->
+      </div>
+    </section>
+    <!-- tools used end -->
+  </main>
+  <script src="src/js/index.js"></script>
+  <script type="module" src="src/js/traillerMouse.js"></script>
+</body>
+
 </html>
