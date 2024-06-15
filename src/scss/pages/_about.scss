@@ -305,7 +305,6 @@
   }
 }
 
-
 @media (min-width: 768px) and (max-width: 819px) {
   .persons {
     transform: translate(-80%, 55%); /* Adjust position for tablets */
@@ -320,7 +319,9 @@
 
 @media (min-width: 1024px) and (max-width: 1025px) {
   .persons {
-    transform: translate(-60%, 55%); /* Adjust position for iPad Pro and larger screens */
+    transform: translate(
+      -60%,
+      55%
+    ); /* Adjust position for iPad Pro and larger screens */
   }
 }
-

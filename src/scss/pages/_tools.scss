@@ -41,14 +41,17 @@
     background: radial-gradient(ellipse at bottom, rgba(9, 10, 15) 100%);
     overflow: hidden;
   }
-  
+
   .tools-used-wrapper {
     padding: 2rem; /* Mengurangi padding agar cocok untuk perangkat seluler */
     display: grid;
     gap: 1rem; /* Mengurangi gap antar elemen */
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Menggunakan auto-fit untuk menyesuaikan jumlah kolom dengan ukuran minimum 100px */
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(100px, 1fr)
+    ); /* Menggunakan auto-fit untuk menyesuaikan jumlah kolom dengan ukuran minimum 100px */
   }
-  
+
   .tools-used-wrapper picture {
     background: #fff;
     padding: 0.5rem; /* Mengurangi padding */
@@ -56,10 +59,9 @@
     justify-content: center;
     align-items: center;
   }
-  
+
   .tools-used-wrapper img {
     max-width: 80px; /* Mengurangi ukuran maksimum gambar */
     max-height: 80px;
   }
-
 }
