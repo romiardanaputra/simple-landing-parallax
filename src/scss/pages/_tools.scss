@@ -6,6 +6,14 @@
   overflow: hidden;
 }
 
+.tools-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
 .tools-used-wrapper {
   padding: 4rem;
   width: 100%;
@@ -13,13 +21,27 @@
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+
   > *:nth-child(odd) {
     justify-self: start;
-    width: 50%;
+    width: 65%;
+    border-radius: 0px 200px 200px 0px;
+    transition: width 0.3s ease-in-out; /* add transition for smooth animation */
   }
+  
+  > *:nth-child(odd):hover {
+    width: 75%; /* extend width by 10% on hover */
+  }
+  
   > *:nth-child(even) {
     justify-self: end;
-    width: 50%;
+    width: 65%;
+    border-radius: 200px 0px 0px 200px;
+    transition: width 0.3s; /* add transition effect */
+  }
+  
+  > *:nth-child(even):hover {
+    width: 75%; /* extend to the left 10% on hover */
   }
 
   & picture {
@@ -28,6 +50,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative; /* Added for span positioning */
   }
 
   & img {
@@ -40,11 +63,12 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 30px;
-  font-size: 40px;
+  left: 50%;
+  // transform: translate(-50%, -50%); /* Center the text */
+  font-size: 20px;
   font-weight: bold;
-  color: #000000;
-  // background-color: rgba(255, 255, 255, 0.5);
+  color: #6b54ef;
+  background-color: rgba(255, 255, 255, 0.8); /* Background for better visibility */
   padding: 4px 8px;
   border-radius: 4px;
   opacity: 0;

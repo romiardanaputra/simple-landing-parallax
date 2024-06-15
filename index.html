@@ -62,6 +62,7 @@
               alt="Figma"
               onerror="this.onerror=null; this.src='../../src/assets/icons/figma.webp'"
             />
+            <span></span>
           </picture>
           <!-- figma icon end -->
 
@@ -76,6 +77,7 @@
               alt="Github"
               onerror="this.onerror=null; this.src='../../src/assets/icons/github.webp'"
             />
+            <span></span>
           </picture>
           <!-- github icon end -->
 
@@ -90,6 +92,7 @@
               alt="Html"
               onerror="this.onerror=null; this.src='../../src/assets/icons/html.webp'"
             />
+            <span></span>
           </picture>
           <!-- html icon end -->
 
@@ -101,6 +104,7 @@
               alt="Js"
               onerror="this.onerror=null; this.src='../../src/assets/icons/js.webp'"
             />
+            <span></span>
           </picture>
           <!-- js icon end -->
 
@@ -115,6 +119,7 @@
               alt="Sass"
               onerror="this.onerror=null; this.src='../../src/assets/icons/sass.webp'"
             />
+            <span></span>
           </picture>
           <!-- sass icon end -->
 
@@ -129,6 +134,7 @@
               alt="Vscode"
               onerror="this.onerror=null; this.src='../../src/assets/icons/vscode.webp'"
             />
+            <span></span>
           </picture>
           <!-- vs code icon end -->
         </div>
@@ -140,25 +146,26 @@
   </body>
 
   <script>
-   const toolsUsedWrapper = document.querySelector('.tools-used-wrapper');
+  document.addEventListener('DOMContentLoaded', () => {
+  const toolsUsedWrapper = document.querySelector('.tools-used-wrapper');
 
-toolsUsedWrapper.addEventListener('mouseover', (event) => {
-  console.log(1);
-  const target = event.target;
-  if (target.tagName === 'PICTURE') {
-    const iconName = target.querySelector('img').alt;
-    const textSpan = target.querySelector('span');
-    textSpan.textContent = iconName;
-    textSpan.style.opacity = 1;
-  }
-});
+  toolsUsedWrapper.addEventListener('mouseover', (event) => {
+    const target = event.target.closest('.icon-wrapper');
+    if (target) {
+      const iconName = target.querySelector('img').alt;
+      const textSpan = target.querySelector('span');
+      textSpan.textContent = iconName;
+      textSpan.style.opacity = 1;
+    }
+  });
 
-toolsUsedWrapper.addEventListener('mouseout', (event) => {
-  const target = event.target;
-  if (target.tagName === 'PICTURE') {
-    const textSpan = target.querySelector('span');
-    textSpan.style.opacity = 0;
-  }
+  toolsUsedWrapper.addEventListener('mouseout', (event) => {
+    const target = event.target.closest('.icon-wrapper');
+    if (target) {
+      const textSpan = target.querySelector('span');
+      textSpan.style.opacity = 0;
+    }
+  });
 });
   </script>
 </html>
