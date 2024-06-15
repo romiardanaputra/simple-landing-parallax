@@ -40,7 +40,7 @@ document.addEventListener('scroll', function () {
     setTimeout(() => {
       persons.forEach((img, index) => {
         setTimeout(() => {
-          img.style.transform = 'translate(0, -130%)';
+          img.style.transform = 'translate(0, -100%)';
           img.style.transition = 'transform .8s ease-in-out';
         }, index * 800);
       });

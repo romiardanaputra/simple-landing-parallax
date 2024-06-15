@@ -55,3 +55,34 @@
 .tools-develop {
   min-height: 100vh;
 }
+
+// Tambahkan media query untuk ukuran layar kecil
+@media (max-width: 768px) {
+  .text-typewriter {
+    font-size: 50px; // Sesuaikan ukuran font untuk mobile
+    letter-spacing: 5px;
+    border-right: 3px solid;
+  }
+
+  .container {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .trailer {
+    @include size(20px, 20px); // Kurangi ukuran trailer untuk mobile
+  }
+
+  .persons img {
+    width: 80px; // Kurangi ukuran gambar avatar untuk mobile
+    height: auto;
+  }
+
+  .tools-used-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+}

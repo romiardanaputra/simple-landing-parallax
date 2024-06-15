@@ -244,3 +244,83 @@
     @include size(200px, 400px);
   }
 }
+
+/* Mobile styles */
+@media (max-width: 431px) {
+  .about {
+    height: 100dvh;
+  }
+
+  .bracket,
+  .circle {
+    display: none;
+  }
+
+  .title {
+    font-size: 30px; /* Adjust font size for mobile */
+    letter-spacing: 5px; /* Adjust letter spacing for mobile */
+    margin-top: -30px;
+  }
+
+  .title-wrapper {
+    @include size(90%, auto); /* Adjust size for mobile */
+  }
+
+  .line {
+    width: 80%; /* Adjust width for mobile */
+    top: 100px;
+  }
+
+  .small {
+    font-size: 15px; /* Adjust font size for mobile */
+    line-height: 20px;
+
+    &.top {
+      top: 30px;
+    }
+
+    &.bottom {
+      top: 100px;
+    }
+  }
+
+  .big {
+    font-size: 15px; /* Adjust font size for mobile */
+    line-height: 30px;
+    top: 50px;
+  }
+
+  .persons {
+    flex-direction: column; /* Stack avatars vertically on mobile */
+    transform: translate(-20%, -25%); /* Adjust position for mobile */
+    margin-top: 15px;
+  }
+
+  .persons img {
+    @include size(70px, auto); /* Adjust size for mobile */
+  }
+
+  .persons img:not(:last-child) {
+    margin-bottom: 20px; /* Add spacing between images, except the last one */
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 819px) {
+  .persons {
+    transform: translate(-80%, 55%); /* Adjust position for tablets */
+  }
+}
+
+@media (min-width: 820px) and (max-width: 1023px) {
+  .persons {
+    transform: translate(-70%, 55%); /* Adjust position for larger tablets */
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1025px) {
+  .persons {
+    transform: translate(-60%, 55%); /* Adjust position for iPad Pro and larger screens */
+  }
+}
+
